@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 
-var day = '20151203';
 
 // 引入组件
 var sass = require('gulp-sass'),
@@ -24,13 +23,13 @@ var reload      = browserSync.reload;
 
 //编译Sass，Autoprefix及缩小化
 gulp.task('sass', function() {
-    return gulp.src('./'+ day +'/src/scss/main.scss')
+    return gulp.src('./src/scss/main.scss')
         .pipe(sass({ style: 'expanded' }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest('./'+ day +'/build/css'))
+        .pipe(gulp.dest('./build/css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
-        .pipe(gulp.dest('./'+ day +'/build'))
+        .pipe(gulp.dest('./build'))
         .pipe(reload({stream: true}))
         .pipe(notify({ message: 'Styles  task complete' }));
 });
@@ -53,7 +52,7 @@ gulp.task('home', function() {
 });
 
 gulp.task('html',function(){
-    gulp.src('./'+ day +'/*.html')
+    gulp.src('./*.html')
         .pipe(reload({stream: true}))
 });
 
@@ -63,12 +62,12 @@ gulp.task('homeHtml',function(){
 });
 
 gulp.task('scripts',function(){
-    return gulp.src('./'+ day +'/src/js/*.js')
+    return gulp.src('./src/js/*.js')
         .pipe(concat('main.js'))
-        .pipe(gulp.dest('./'+ day +'/build/js'))
+        .pipe(gulp.dest('./build/js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
-        .pipe(gulp.dest('./'+ day +'/build/js/'))
+        .pipe(gulp.dest('./build/js/'))
         .pipe(reload({stream: true}))
         .pipe(notify({ message: 'Scripts task complete' }));
 
@@ -77,7 +76,7 @@ gulp.task('scripts',function(){
 
 //zip
 gulp.task('zip', function () {
-    return gulp.src(['./'+ day +'/main.min.css','./'+ day +'/host.html'])
+    return gulp.src(['./main.min.css','./host.html'])
         .pipe(zip('special'+ day +'.zip'))
         .pipe(gulp.dest(''+ day +''))
         .pipe(notify({ message: 'zip task complete' }));
@@ -85,7 +84,7 @@ gulp.task('zip', function () {
 
 
 gulp.task('frame', function () {
-    // return gulp.src(['./'+ day +'/build/*/*','./'+ day +'/edm/*'])
+    // return gulp.src(['./build/*/*','./edm/*'])
     //     .pipe(zip('special'+ day +'.zip'))
     //     .pipe(gulp.dest(''+ day +''))
     //     .pipe(notify({ message: 'zip task complete' }));
@@ -94,16 +93,16 @@ gulp.task('frame', function () {
         server: './'+day+'/'
     });
     // 看守 edm.scss 档
-    gulp.watch('./'+ day +'/edm/*.scss', ['edm']);
+    gulp.watch('./edm/*.scss', ['edm']);
     // 看守.scss 档
-    gulp.watch('./'+ day +'/src/scss/*.scss', ['sass']);
+    gulp.watch('./src/scss/*.scss', ['sass']);
     gulp.watch('./home/scss/*.scss', ['home']);
     // 看守所有.js档
-    gulp.watch('./'+ day +'/*.js', ['scripts']);
-    gulp.watch('./'+ day +'/src/js/*.js', ['html','scripts']);
+    gulp.watch('./*.js', ['scripts']);
+    gulp.watch('./src/js/*.js', ['html','scripts']);
 
     // 看守所有.html
-    gulp.watch('./'+ day +'/*.html').on('change', reload);
+    gulp.watch('./*.html').on('change', reload);
     gulp.watch('./*.html').on('change', reload);
     
 });
@@ -116,16 +115,16 @@ gulp.task('dev', ['sass'], function() {
         server: './'+day+'/'
     });
     // 看守 edm.scss 档
-    gulp.watch('./'+ day +'/edm/*.scss', ['edm']);
+    gulp.watch('./edm/*.scss', ['edm']);
     // 看守.scss 档
-    gulp.watch('./'+ day +'/src/scss/*.scss', ['sass']);
+    gulp.watch('./src/scss/*.scss', ['sass']);
     gulp.watch('./home/scss/*.scss', ['home']);
     // 看守所有.js档
-    gulp.watch('./'+ day +'/*.js', ['scripts']);
-    gulp.watch('./'+ day +'/src/js/*.js', ['html','scripts']);
+    gulp.watch('./*.js', ['scripts']);
+    gulp.watch('./src/js/*.js', ['html','scripts']);
 
     // 看守所有.html
-    gulp.watch('./'+ day +'/*.html').on('change', reload);;
+    gulp.watch('./*.html').on('change', reload);;
     gulp.watch('./*.html').on('change', reload);;
 
 });
@@ -136,14 +135,14 @@ gulp.task('dev', ['sass'], function() {
 gulp.task('watch', function() {
 
     // 看守.scss 档
-    gulp.watch('./'+ day +'/src/scss/*.scss', ['sass']);
+    gulp.watch('./src/scss/*.scss', ['sass']);
     gulp.watch('./home/scss/*.scss', ['home']);
     // 看守所有.js档
-    gulp.watch('./'+ day +'/*.js', ['scripts']);
-    gulp.watch('./'+ day +'/src/js/*.js', ['html','scripts']);
+    gulp.watch('./*.js', ['scripts']);
+    gulp.watch('./src/js/*.js', ['html','scripts']);
 
     // 看守所有.html
-    gulp.watch('./'+ day +'/*.html',['html','zip']);
+    gulp.watch('./*.html',['html','zip']);
     gulp.watch('./*.html',['homeHtml']);
 
 });

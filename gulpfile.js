@@ -14,21 +14,12 @@ var sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     livereload = require('gulp-livereload'),
     zip = require('gulp-zip');
-    // port = process.env.port || 5000;
 
 
 var browserSync = require('browser-sync').create();
 var reload      = browserSync.reload;
 
 
-// live reload
-// gulp.task('connect',function(){
-//     connect.server({
-//         // root:'./',
-//         port: port,
-//         livereload: true,
-//     })
-// });
 
 
 //编译Sass，Autoprefix及缩小化
@@ -45,30 +36,8 @@ gulp.task('sass', function() {
 });
 
 
-gulp.task('edm', function() {
-    return gulp.src('./'+ day +'/edm//edm.scss')
-        .pipe(sass({ style: 'expanded' }))
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest('./'+ day +'/edm/'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(minifycss())
-        .pipe(gulp.dest('./'+ day +'/edm/'))
-        .pipe(reload({stream: true}))
-        .pipe(notify({ message: 'Styles  task complete' }));
-});
 
 
-gulp.task('onescss', function() {
-    return gulp.src('./'+ day +'/images/edm/emd.scss')
-        .pipe(sass({ style: 'expanded' }))
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(rename('emd.css'))
-        .pipe(minifycss())
-        .pipe(gulp.dest('./'+ day +'/images/edm/'))
-        .pipe(reload({stream: true}))
-        .pipe(notify({ message: 'onescss  task complete' }));
-
-});
 
 gulp.task('home', function() {
     return gulp.src('./home/scss/main.scss')

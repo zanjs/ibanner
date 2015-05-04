@@ -1,0 +1,40 @@
+{
+  "name": "ibanner",
+  "version": "0.0.1",
+  "description": "banner,js",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "bower": "^1.7.1",
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-uglify": "^1.5.1",
+    "gulp-zip": "^3.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zanjs/ibanner.git"
+  },
+  "keywords": [
+    "banner",
+    "js"
+  ],
+  "author": "zan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zanjs/ibanner/issues"
+  },
+  "homepage": "https://github.com/zanjs/ibanner#readme"
+}

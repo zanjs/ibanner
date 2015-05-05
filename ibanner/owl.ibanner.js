@@ -17,7 +17,7 @@ if (typeof Object.create !== "function") {
             var base = this;
 
             base.$elem = $(el);
-            base.options = $.extend({}, $.fn.owlCarousel.options, base.$elem.data(), options);
+            base.options = $.extend({}, $.fn.ibanner.options, base.$elem.data(), options);
 
             base.userOptions = options;
             base.loadContent();
@@ -1428,7 +1428,7 @@ if (typeof Object.create !== "function") {
 
     };
 
-    $.fn.owlCarousel = function (options) {
+    $.fn.ibanner = function (options) {
         return this.each(function () {
             if ($(this).data("owl-init") === true) {
                 return false;
@@ -1436,11 +1436,11 @@ if (typeof Object.create !== "function") {
             $(this).data("owl-init", true);
             var carousel = Object.create(Carousel);
             carousel.init(options, this);
-            $.data(this, "owlCarousel", carousel);
+            $.data(this, "ibanner", carousel);
         });
     };
 
-    $.fn.owlCarousel.options = {
+    $.fn.ibanner.options = {
 
         items : 5,
         itemsCustom : false,

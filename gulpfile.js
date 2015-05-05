@@ -75,12 +75,12 @@ gulp.task('scripts',function(){
 
 
 //zip
-gulp.task('zip', function () {
-    return gulp.src(['./main.min.css','./host.html'])
-        .pipe(zip('special'+ day +'.zip'))
-        .pipe(gulp.dest(''+ day +''))
-        .pipe(notify({ message: 'zip task complete' }));
-});
+// gulp.task('zip', function () {
+//     return gulp.src(['./main.min.css','./host.html'])
+//         .pipe(zip('special'+ day +'.zip'))
+//         .pipe(gulp.dest(''+ day +''))
+//         .pipe(notify({ message: 'zip task complete' }));
+// });
 
 
 gulp.task('frame', function () {
@@ -90,7 +90,7 @@ gulp.task('frame', function () {
     //     .pipe(notify({ message: 'zip task complete' }));
     
     browserSync.init({
-        server: './'+day+'/'
+        server: './'
     });
     // 看守 edm.scss 档
     gulp.watch('./edm/*.scss', ['edm']);
@@ -112,7 +112,7 @@ gulp.task('frame', function () {
 gulp.task('dev', ['sass'], function() {
 
     browserSync.init({
-        server: './'+day+'/'
+        server: './'
     });
     // 看守 edm.scss 档
     gulp.watch('./edm/*.scss', ['edm']);

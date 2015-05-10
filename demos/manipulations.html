@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>ibanner - Content Manipulations</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="jQuery Responsive Carousel - Owl Carusel">
+    <meta name="description" content="jQuery Responsive ibanner - Owl Carusel">
     <meta name="author" content="Bartosz Wojciechowski">
     
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700' rel='stylesheet' type='text/css'>
@@ -12,7 +12,7 @@
     <link href="../assets/css/custom.css" rel="stylesheet">
 
     <!-- ibanner Assets -->
-    <link href="../ibanner/owl.carousel.css" rel="stylesheet">
+    <link href="../ibanner/owl.ibanner.css" rel="stylesheet">
     <link href="../ibanner/owl.theme.css" rel="stylesheet">
 
     <!-- Prettify -->
@@ -39,7 +39,7 @@
             <div class="nav-collapse collapse">
             <ul class="nav pull-right">
               <li><a href="../index.html"><i class="icon-chevron-left"></i> Back to Frontpage</a></li>
-              <li><a href="../owl.carousel.zip" class="download download-on" data-spy="affix" data-offset-top="450">Download</a></li>
+              <li><a href="../owl.ibanner.zip" class="download download-on" data-spy="affix" data-offset-top="450">Download</a></li>
             </ul>
             <ul class="nav pull-left">
               
@@ -64,7 +64,7 @@
           <div class="row">
 
             <div class="span10">
-              <div id="owl-demo" class="owl-carousel">
+              <div id="owl-demo" class="owl-ibanner">
                 <div class="item dodgerBlue"><h1>Start</h1></div>
               </div>
             </div>
@@ -103,7 +103,7 @@
         <div class="row">
           <div class="span12">
             <h1>Setup</h1>
-            <p>See buttons on top right? Great! Now have a play with them and you get the idea. Thats all. If you have any questions let me know on <a href="https://github.com/OwlFonk/OwlCarousel">github</a> </p>
+            <p>See buttons on top right? Great! Now have a play with them and you get the idea. Thats all. If you have any questions let me know on <a href="https://github.com/OwlFonk/Owlibanner">github</a> </p>
             <ul class="nav nav-tabs" id="myTab">
               <li class="active"><a href="#javascript">Javascript</a></li>
               <li><a href="#HTML">HTML</a></li>
@@ -121,8 +121,8 @@ $(document).ready(function() {
       textholder,
       booleanValue = false;
 
-  //init carousel
-  owl.owlCarousel();
+  //init ibanner
+  owl.owlibanner();
 
   /*
   addItem() method add new slides on given position
@@ -134,14 +134,14 @@ $(document).ready(function() {
   var newItem = "&lt;div&gt;new Item&lt;/div&gt;"
   
   Second parameter "targetPosition" is optional and accept number values. 
-  To add item at the end of carousel you could use -1 value. Last item is default value.
+  To add item at the end of ibanner you could use -1 value. Last item is default value.
   */
   
   $('.add').on("click", function(e){
     e.preventDefault();
     i += 1;
     var content = "&lt;div class=\"item dodgerBlue\"&gt;&lt;h1&gt;"+i+"&lt;/h1&gt;&lt;/div&gt;";
-    owl.data('owlCarousel').addItem(content);
+    owl.data('owlibanner').addItem(content);
   });
 
   /*
@@ -158,11 +158,11 @@ $(document).ready(function() {
     e.preventDefault();
     i -= 1;
     if(i&lt;=0)i=0;
-    $("#owl-demo").data('owlCarousel').removeItem();
+    $("#owl-demo").data('owlibanner').removeItem();
   });
 
   /*
-  destroy() method unwrap whole plugin and leave original pre carousel structure
+  destroy() method unwrap whole plugin and leave original pre ibanner structure
   
   Syntax:
   owldata.destroy();
@@ -170,7 +170,7 @@ $(document).ready(function() {
 
   $('.destroy').click(function(e){
     e.preventDefault()
-    $("#owl-demo").data('owlCarousel').destroy();
+    $("#owl-demo").data('owlibanner').destroy();
   });
 
   /*
@@ -193,7 +193,7 @@ $(document).ready(function() {
       booleanValue = true;
     }
 
-    owl.data('owlCarousel').reinit({
+    owl.data('owlibanner').reinit({
         singleItem : booleanValue
       });
   })
@@ -204,7 +204,7 @@ $(document).ready(function() {
 
   $('.rebuild').click(function(e){
     e.preventDefault()
-    owl.owlCarousel();
+    owl.owlibanner();
   });
 
 });
@@ -214,7 +214,7 @@ $(document).ready(function() {
 
               <div class="tab-pane" id="HTML">
 <pre class="pre-show prettyprint linenums">
-&lt;div id="owl-demo" class="owl-carousel"&gt;
+&lt;div id="owl-demo" class="owl-ibanner"&gt;
   &lt;div class="item dodgerBlue"&gt;&lt;h1&gt;Start&lt;/h1&gt;&lt;/div&gt;
 &lt;/div&gt;
 </pre>
@@ -361,7 +361,7 @@ $(document).ready(function() {
    
 
     <script src="../assets/js/jquery-1.9.1.min.js"></script> 
-    <script src="../ibanner/owl.carousel.js"></script>
+    <script src="../ibanner/owl.ibanner.js"></script>
 
 
     <!-- Demo -->
@@ -395,8 +395,8 @@ $(document).ready(function() {
           textholder,
           booleanValue = false;
 
-      //init carousel
-      owl.owlCarousel();
+      //init ibanner
+      owl.owlibanner();
 
       /*
       addItem() method add new slides on given position
@@ -408,14 +408,14 @@ $(document).ready(function() {
       var newItem = "<div>new Item</div>"
       
       Second parameter "targetPosition" is optional and accept number values. 
-      To add item at the end of carousel you could use -1 value. Last item is default value.
+      To add item at the end of ibanner you could use -1 value. Last item is default value.
       */
       
       $('.add').on("click", function(e){
         e.preventDefault();
         i += 1;
         var content = "<div class=\"item dodgerBlue\"><h1>"+i+"</h1></div>";
-        owl.data('owlCarousel').addItem(content);
+        owl.data('owlibanner').addItem(content);
       });
 
       /*
@@ -432,11 +432,11 @@ $(document).ready(function() {
         e.preventDefault();
         i -= 1;
         if(i<=0)i=0;
-        $("#owl-demo").data('owlCarousel').removeItem();
+        $("#owl-demo").data('owlibanner').removeItem();
       });
 
       /*
-      destroy() method unwrap whole plugin and leave original pre carousel structure
+      destroy() method unwrap whole plugin and leave original pre ibanner structure
       
       Syntax:
       owldata.destroy();
@@ -444,7 +444,7 @@ $(document).ready(function() {
 
       $('.destroy').click(function(e){
         e.preventDefault()
-        $("#owl-demo").data('owlCarousel').destroy();
+        $("#owl-demo").data('owlibanner').destroy();
       });
 
       /*
@@ -467,7 +467,7 @@ $(document).ready(function() {
           booleanValue = true;
         }
 
-        owl.data('owlCarousel').reinit({
+        owl.data('owlibanner').reinit({
             singleItem : booleanValue
           });
       })
@@ -478,7 +478,7 @@ $(document).ready(function() {
 
       $('.rebuild').click(function(e){
         e.preventDefault()
-        owl.owlCarousel();
+        owl.owlibanner();
       });
 
     });

@@ -1,6 +1,9 @@
 
 
 ### ibanner ###
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/zanjs/ibanner.svg)](https://greenkeeper.io/)
+
 >v.0.0.1
 
 Touch enabled jQuery plugin that lets you create beautiful responsive ibanner slider.
